@@ -1,22 +1,50 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useCallback } from "react";
 import { useNavigate } from "react-router-dom";
 import "./OnboardingOutput.css";
+
+const getMealPlan = (pref) => {
+  const plans = {
+    vegetarian: [
+      { meal: "Breakfast", title: "Greek Yogurt Power Bowl", desc: "1 Cup Greek Yogurt, 1/2 Cup Blueberries, 20g Almonds" },
+      { meal: "Lunch", title: "Mediterranean Halloumi Wrap", desc: "Whole grain wrap, Grilled Halloumi, Spinach, Hummus, Peppers" },
+      { meal: "Dinner", title: "Golden Tofu Stir-Fry", desc: "Crispy Tofu, Broccoli, Snap Peas, Brown Rice, Coconut Aminos" }
+    ],
+    vegan: [
+      { meal: "Breakfast", title: "Savory Scrambled Tofu", desc: "Silken Tofu, Turmeric, Spinach, Onions, Whole Grain Toast" },
+      { meal: "Lunch", title: "Rainbow Quinoa Salad", desc: "Quinoa, Black Beans, Corn, Avocado, Lime Cilantro Dressing" },
+      { meal: "Dinner", title: "Lentil Shepherd's Pie", desc: "Red Lentils, Carrots, Mushroom Gravy, Sweet Potato Mash" }
+    ],
+    keto: [
+      { meal: "Breakfast", title: "Keto Cloud Eggs & Bacon", desc: "2 Poached Eggs, 3 Strips Bacon, 1/2 Avocado, Sautéed Spinach" },
+      { meal: "Lunch", title: "Chicken Pesto Zoodles", desc: "Zucchini Noodles, Grilled Chicken Breast, Pine Nut Pesto, Parmesan" },
+      { meal: "Dinner", title: "Garlic Butter Ribeye", desc: "Ribeye Steak, Asparagus Spears, Herb Butter, Cauliflower Rice" }
+    ],
+    balanced: [
+      { meal: "Breakfast", title: "Classic Oatmeal & Whey", desc: "1/2 Cup Oats, 1 Scoop Whey Protein, 1 Tbsp Peanut Butter, Banana" },
+      { meal: "Lunch", title: "Lean Chicken & Sweet Potato", desc: "6oz Grilled Chicken, 150g Sweet Potato, Steamed Broccoli" },
+      { meal: "Dinner", title: "Atlantic Salmon & Quinoa", desc: "6oz Salmon Fillet, 1/2 Cup Quinoa, Lemon Roasted Asparagus" }
+    ]
+  };
+  return plans[pref] || plans.balanced;
+};
+
+const getDietTips = (pref) => {
+  const tips = {
+    vegetarian: ["Focus on lentils and chickpeas for protein", "Add Greek yogurt for B12", "Include varied nuts/seeds"],
+    vegan: ["Supplement B12 and Vitamin D", "Prioritize soy and pea protein", "Use nutritional yeast for flavor"],
+    keto: ["Focus on healthy fats (Avocado, Olive Oil)", "Keep net carbs under 20g", "Ensure adequate electrolytes"],
+    "gluten-free": ["Use quinoa and brown rice", "Focus on naturally GF whole foods", "Check sauces for hidden gluten"],
+    balanced: ["Prioritize whole grains", "Aim for 3-4 varied meals", "Stay hydrated (3L+ daily)"]
+  };
+  return tips[pref] || tips.balanced;
+};
 
 function OnboardingOutput() {
   const [results, setResults] = useState(null);
   const [blueprint, setBlueprint] = useState(null);
   const navigate = useNavigate();
 
-  useEffect(() => {
-    const stored = localStorage.getItem("onboardingResults");
-    if (stored) {
-      const data = JSON.parse(stored);
-      setResults(data);
-      generateBlueprint(data);
-    }
-  }, []);
-
-  const generateBlueprint = (data) => {
+  const generateBlueprint = useCallback((data) => {
     const { sex, age, weight, height, activityLevel, fitnessLevel, dietPref } = data;
 
     // 1. Calculate TDEE (Mifflin-St Jeor)
@@ -63,44 +91,17 @@ function OnboardingOutput() {
       dietTips: getDietTips(dietPref),
       mealPlan: getMealPlan(dietPref)
     });
-  };
+  }, []);
 
-  const getMealPlan = (pref) => {
-    const plans = {
-      vegetarian: [
-        { meal: "Breakfast", title: "Greek Yogurt Power Bowl", desc: "1 Cup Greek Yogurt, 1/2 Cup Blueberries, 20g Almonds" },
-        { meal: "Lunch", title: "Mediterranean Halloumi Wrap", desc: "Whole grain wrap, Grilled Halloumi, Spinach, Hummus, Peppers" },
-        { meal: "Dinner", title: "Golden Tofu Stir-Fry", desc: "Crispy Tofu, Broccoli, Snap Peas, Brown Rice, Coconut Aminos" }
-      ],
-      vegan: [
-        { meal: "Breakfast", title: "Savory Scrambled Tofu", desc: "Silken Tofu, Turmeric, Spinach, Onions, Whole Grain Toast" },
-        { meal: "Lunch", title: "Rainbow Quinoa Salad", desc: "Quinoa, Black Beans, Corn, Avocado, Lime Cilantro Dressing" },
-        { meal: "Dinner", title: "Lentil Shepherd's Pie", desc: "Red Lentils, Carrots, Mushroom Gravy, Sweet Potato Mash" }
-      ],
-      keto: [
-        { meal: "Breakfast", title: "Keto Cloud Eggs & Bacon", desc: "2 Poached Eggs, 3 Strips Bacon, 1/2 Avocado, Sautéed Spinach" },
-        { meal: "Lunch", title: "Chicken Pesto Zoodles", desc: "Zucchini Noodles, Grilled Chicken Breast, Pine Nut Pesto, Parmesan" },
-        { meal: "Dinner", title: "Garlic Butter Ribeye", desc: "Ribeye Steak, Asparagus Spears, Herb Butter, Cauliflower Rice" }
-      ],
-      balanced: [
-        { meal: "Breakfast", title: "Classic Oatmeal & Whey", desc: "1/2 Cup Oats, 1 Scoop Whey Protein, 1 Tbsp Peanut Butter, Banana" },
-        { meal: "Lunch", title: "Lean Chicken & Sweet Potato", desc: "6oz Grilled Chicken, 150g Sweet Potato, Steamed Broccoli" },
-        { meal: "Dinner", title: "Atlantic Salmon & Quinoa", desc: "6oz Salmon Fillet, 1/2 Cup Quinoa, Lemon Roasted Asparagus" }
-      ]
-    };
-    return plans[pref] || plans.balanced;
-  };
+  useEffect(() => {
+    const stored = localStorage.getItem("onboardingResults");
+    if (stored) {
+      const data = JSON.parse(stored);
+      setResults(data);
+      generateBlueprint(data);
+    }
+  }, [generateBlueprint]);
 
-  const getDietTips = (pref) => {
-    const tips = {
-      vegetarian: ["Focus on lentils and chickpeas for protein", "Add Greek yogurt for B12", "Include varied nuts/seeds"],
-      vegan: ["Supplement B12 and Vitamin D", "Prioritize soy and pea protein", "Use nutritional yeast for flavor"],
-      keto: ["Focus on healthy fats (Avocado, Olive Oil)", "Keep net carbs under 20g", "Ensure adequate electrolytes"],
-      "gluten-free": ["Use quinoa and brown rice", "Focus on naturally GF whole foods", "Check sauces for hidden gluten"],
-      balanced: ["Prioritize whole grains", "Aim for 3-4 varied meals", "Stay hydrated (3L+ daily)"]
-    };
-    return tips[pref] || tips.balanced;
-  };
 
   if (!results || !blueprint) {
     return (
