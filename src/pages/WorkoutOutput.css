@@ -5,6 +5,12 @@
         radial-gradient(circle at bottom left, rgba(139, 92, 246, 0.03) 0%, transparent 40%);
 }
 
+@media (max-width: 768px) {
+    .workout-output-page {
+        padding: 2rem 0.5rem;
+    }
+}
+
 .workout-output-header {
     padding: 4rem 0;
     margin-bottom: 8rem;

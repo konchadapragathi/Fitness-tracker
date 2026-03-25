@@ -195,6 +195,12 @@ code {
   box-sizing: border-box;
 }
 
+@media (max-width: 600px) {
+  .page-container {
+    padding: 0 1rem;
+  }
+}
+
 /* Standardized responsive card container */
 .premium-center-layout {
   max-width: 550px;
@@ -208,6 +214,7 @@ code {
   gap: 0.5rem;
   margin-bottom: 2rem;
   padding-top: 1rem;
+  width: 100%;
 }
 
 .page-header h1 {
