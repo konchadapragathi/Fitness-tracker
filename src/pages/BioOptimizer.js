@@ -65,8 +65,8 @@ function BioOptimizer() {
     return (
         <div className="bio-page animate-fade-in">
             <div className="page-container bio-container">
-                <div className="bio-header">
-                    <button className="icon-btn" onClick={() => navigate("/goals")}>
+                <div className="page-header bio-header">
+                    <button className="icon-btn mb-2" onClick={() => navigate("/goals")}>
                         &#8592;
                     </button>
                     <h1>Bio-Optimizer <span className="lab-tag">LAB</span></h1>
