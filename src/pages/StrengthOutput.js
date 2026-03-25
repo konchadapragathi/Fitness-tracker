@@ -67,8 +67,8 @@ function StrengthOutput() {
   return (
     <div className="strength-output-page animate-fade-in">
       <div className="page-container">
-        <div className="output-header text-center">
-          <button className="icon-btn mb-3" onClick={() => navigate("/strength")}>
+        <div className="page-header output-header">
+          <button className="icon-btn mb-2" onClick={() => navigate("/strength")}>
             &#8592;
           </button>
           <h1>💪 Exercises for <span className="highlight">{results.muscle}</span></h1>

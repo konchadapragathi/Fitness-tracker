@@ -73,7 +73,10 @@ function Tracking() {
   return (
     <div className="tracking-page animate-fade-in">
       <div className="tracking-container glass-panel">
-        <div className="tracking-header">
+        <div className="page-header tracking-header">
+          <button className="icon-btn mb-3" onClick={() => navigate("/goals")}>
+            &#8592;
+          </button>
           <h1>Calorie Tracker</h1>
           <p>Calculate your daily energy needs</p>
         </div>

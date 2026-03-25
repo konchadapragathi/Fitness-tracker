@@ -49,8 +49,8 @@ function FatLoss() {
   return (
     <div className="feature-page animate-fade-in">
       <div className="feature-container">
-        <div className="feature-header">
-          <button className="icon-btn mb-4" onClick={() => navigate("/goals")}>
+        <div className="page-header feature-header">
+          <button className="icon-btn mb-2" onClick={() => navigate("/goals")}>
             &#8592;
           </button>
           <h1>Fat Loss <span className="lab-tag">LAB</span></h1>

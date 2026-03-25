@@ -31,8 +31,8 @@ function FatLossOutput() {
   return (
     <div className="fatloss-output-page animate-fade-in">
       <div className="page-container">
-        <div className="output-header text-center">
-          <button className="icon-btn mb-3" onClick={() => navigate("/fatloss")}>
+        <div className="page-header output-header">
+          <button className="icon-btn mb-2" onClick={() => navigate("/fatloss")}>
             &#8592;
           </button>
           <h1>🔥 Calories Burned for <span className="highlight-secondary">{results.activity}</span></h1>

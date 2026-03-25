@@ -34,8 +34,8 @@ function WorkoutOutput() {
     return (
         <div className="workout-output-page animate-fade-in">
             <div className="page-container">
-                <div className="workout-output-header text-center">
-                    <button className="icon-btn mb-3" onClick={() => navigate("/workout")}>
+                <div className="page-header workout-output-header">
+                    <button className="icon-btn mb-2" onClick={() => navigate("/workout")}>
                         &#8592;
                     </button>
                     <h1>📋 Your <span className="highlight-workout">{muscle}</span> Split</h1>

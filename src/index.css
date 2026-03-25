@@ -55,10 +55,16 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: 'Outfit', sans-serif;
+   font-family: 'Outfit', sans-serif;
   font-weight: 600;
   margin-top: 0;
   letter-spacing: -0.02em;
+}
+
+@media (max-width: 600px) {
+  h1 { font-size: 1.75rem !important; }
+  h2 { font-size: 1.5rem !important; }
+  h3 { font-size: 1.25rem !important; }
 }
 
 code {
@@ -173,7 +179,7 @@ code {
 @media (max-width: 768px) {
   .content-area {
     padding-top: 1rem;
-    padding-bottom: 7rem; /* Space for mobile bottom bar */
+    padding-bottom: 5.5rem; /* Space for mobile bottom bar */
   }
 }
 
@@ -189,6 +195,25 @@ code {
 .premium-center-layout {
   max-width: 550px;
   margin: 0 auto;
+}
+
+/* Standardized Page Header */
+.page-header {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-bottom: 2rem;
+  padding-top: 1rem;
+}
+
+.page-header h1 {
+  margin: 0.5rem 0 0.25rem 0;
+}
+
+.page-header p {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  margin: 0;
 }
 
 /* Animations */
