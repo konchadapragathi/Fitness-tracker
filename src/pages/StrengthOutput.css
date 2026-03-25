@@ -1,0 +1,178 @@
+.strength-output-page {
+  min-height: 100vh;
+  background: radial-gradient(circle at top right, rgba(16, 185, 129, 0.05) 0%, transparent 50%),
+    radial-gradient(circle at bottom left, rgba(139, 92, 246, 0.05) 0%, transparent 50%);
+  padding: 6rem 2rem;
+}
+
+.empty-state {
+  max-width: 500px;
+  margin: 15vh auto;
+  text-align: center;
+  padding: 4rem;
+}
+
+.empty-icon {
+  font-size: 4rem;
+  margin-bottom: 1.5rem;
+}
+
+.output-header {
+  margin-bottom: 8rem;
+}
+
+.output-header h1 {
+  font-size: 3.5rem;
+  margin-bottom: 1.5rem;
+  letter-spacing: -1px;
+}
+
+.highlight {
+  color: var(--accent-primary);
+  text-transform: capitalize;
+}
+
+.output-header p {
+  color: var(--text-muted);
+  font-size: 1.25rem;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.exercises-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(450px, 1fr));
+  gap: 10rem;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding-bottom: 10rem;
+}
+
+.exercise-card {
+  padding: 4rem;
+  border-radius: 32px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.exercise-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 2.5rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  padding-bottom: 1.5rem;
+}
+
+.card-header h3 {
+  font-size: 1.8rem;
+  color: #fff;
+  margin: 0;
+  line-height: 1.2;
+  padding-right: 1.5rem;
+  font-family: 'Outfit', sans-serif;
+}
+
+.difficulty-badge {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.7rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  padding: 0.4rem 0.8rem;
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.difficulty-beginner {
+  color: #34d399;
+  background: rgba(52, 211, 153, 0.1);
+}
+
+.difficulty-intermediate {
+  color: #fbbf24;
+  background: rgba(251, 191, 36, 0.1);
+}
+
+.difficulty-expert {
+  color: #f87171;
+  background: rgba(248, 113, 113, 0.1);
+}
+
+.type-label {
+  color: var(--text-muted);
+  font-size: 1rem;
+  margin-bottom: 2rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.type-label strong {
+  display: none;
+}
+
+.instructions {
+  background: rgba(0, 0, 0, 0.15);
+  padding: 2rem;
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.03);
+  flex-grow: 1;
+}
+
+.instructions strong {
+  display: block;
+  font-size: 0.8rem;
+  font-weight: 800;
+  letter-spacing: 2px;
+  color: var(--accent-primary);
+  margin-bottom: 1.2rem;
+  text-transform: uppercase;
+}
+
+.instructions p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: rgba(255, 255, 255, 0.8);
+  margin: 0;
+  white-space: pre-line;
+}
+
+.read-more-btn {
+  background: none;
+  border: none;
+  color: var(--accent-primary);
+  font-weight: 700;
+  font-size: 0.9rem;
+  cursor: pointer;
+  margin-top: 1.5rem;
+  padding: 0;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  display: inline-block;
+  transition: color 0.3s ease;
+}
+
+.read-more-btn:hover {
+  color: var(--accent-primary-hover);
+  text-decoration: underline;
+}
+
+@media (max-width: 900px) {
+  .exercises-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .exercise-card {
+    padding: 2.5rem;
+  }
+}

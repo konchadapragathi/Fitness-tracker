@@ -1,0 +1,157 @@
+.workout-output-page {
+    min-height: 100vh;
+    padding: 4rem 1rem;
+    background: radial-gradient(circle at top right, rgba(16, 185, 129, 0.03) 0%, transparent 40%),
+        radial-gradient(circle at bottom left, rgba(139, 92, 246, 0.03) 0%, transparent 40%);
+}
+
+.workout-output-header {
+    padding: 4rem 0;
+    margin-bottom: 8rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.workout-output-header h1 {
+    font-size: 3.5rem;
+    margin: 0;
+    letter-spacing: -1.5px;
+    font-weight: 800;
+}
+
+.workout-output-header p {
+    color: var(--text-muted);
+    font-size: 1.25rem;
+    max-width: 600px;
+    margin: 0;
+    line-height: 1.8;
+}
+
+.highlight-workout {
+    color: var(--accent-primary);
+    background: linear-gradient(135deg, #34d399, #10b981);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-transform: capitalize;
+}
+
+.workout-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+    row-gap: 8rem;
+    column-gap: 4rem;
+    max-width: 1400px;
+    margin: 0 auto 10rem auto;
+}
+
+.exercise-card {
+    padding: 4rem;
+    display: flex;
+    flex-direction: column;
+    transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+    background: rgba(255, 255, 255, 0.015);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 28px;
+}
+
+.exercise-card:hover {
+    transform: translateY(-12px);
+    background: rgba(255, 255, 255, 0.03);
+    border-color: var(--accent-primary);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+}
+
+.exercise-card-header {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.exercise-card-header h3 {
+    font-size: 1.4rem;
+    margin: 0;
+    color: var(--text-main);
+}
+
+.exercise-icon {
+    font-size: 2rem;
+    background: rgba(16, 185, 129, 0.1);
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px;
+}
+
+.exercise-instructions {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    line-height: 1.8;
+    margin-bottom: 2.5rem;
+    flex-grow: 1;
+}
+
+.exercise-details-footer {
+    display: flex;
+    gap: 1.5rem;
+    margin-top: auto;
+    border-top: 1px solid var(--border-light);
+    padding-top: 2rem;
+}
+
+.detail-pill {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.pill-label {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.pill-value {
+    font-family: 'Outfit', sans-serif;
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--text-main);
+}
+
+.output-footer {
+    margin-top: 10rem;
+    padding-bottom: 8rem;
+    display: flex;
+    justify-content: center;
+}
+
+.secondary-action {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--border-light);
+    color: var(--text-main);
+    padding: 1.2rem 3.5rem;
+    border-radius: 40px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: 500;
+    font-size: 1rem;
+    letter-spacing: 0.5px;
+}
+
+.secondary-action:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: var(--text-muted);
+    transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+    .workout-grid {
+        grid-template-columns: 1fr;
+    }
+}

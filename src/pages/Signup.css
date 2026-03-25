@@ -1,0 +1,5 @@
+/* We import Login.css content indirectly or copy the shared styles because CRA might duplicate names, but since they share structure, we can just style it identically or import Login.css. Let's make Signup.css just import Login.css styles for consistency. */
+
+@import './Login.css';
+
+/* Any signup specific overrides can go here */

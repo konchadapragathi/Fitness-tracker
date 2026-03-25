@@ -1,0 +1,119 @@
+.feature-page {
+  min-height: 100vh;
+  padding: 6rem 1rem;
+  background: radial-gradient(circle at top right, rgba(16, 185, 129, 0.03) 0%, transparent 40%),
+    radial-gradient(circle at bottom left, rgba(139, 92, 246, 0.03) 0%, transparent 40%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.feature-container {
+  max-width: 550px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.feature-header {
+  text-align: center;
+  margin-bottom: 6rem;
+}
+
+.feature-header h1 {
+  font-size: 3rem;
+  margin-bottom: 1.5rem;
+  color: #fff;
+  font-family: 'Outfit', sans-serif;
+  letter-spacing: -1px;
+}
+
+.feature-header p {
+  color: var(--text-muted);
+  font-size: 1.1rem;
+  max-width: 400px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+.feature-card {
+  padding: 4rem;
+  border-radius: 24px;
+}
+
+.input-label {
+  display: block;
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 2px;
+  color: var(--text-muted);
+  margin-bottom: 2.5rem;
+  text-align: center;
+}
+
+.action-section {
+  margin-top: 6rem;
+}
+
+.premium-input-field {
+  width: 100%;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 1.2rem 1.5rem;
+  border-radius: 12px;
+  color: #fff;
+  font-size: 1.1rem;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.premium-input-field:focus {
+  outline: none;
+  border-color: var(--accent-primary);
+  background: rgba(255, 255, 255, 0.05);
+  box-shadow: 0 0 20px rgba(16, 185, 129, 0.1);
+}
+
+.chip-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.75rem;
+  margin-top: 4rem;
+}
+
+.feature-chip {
+  padding: 0.6rem;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 8px;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-align: center;
+}
+
+.feature-chip:hover {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.feature-chip.active {
+  background: rgba(16, 185, 129, 0.1);
+  border-color: var(--accent-primary);
+  color: #fff;
+}
+
+
+.error-message {
+  color: #f87171;
+  background: rgba(248, 113, 113, 0.1);
+  padding: 1rem;
+  border-radius: 12px;
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+@media (max-width: 600px) {
+  .feature-card {
+    padding: 2.5rem 1.5rem;
+  }
+}

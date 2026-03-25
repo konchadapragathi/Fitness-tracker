@@ -1,0 +1,152 @@
+.onboarding-page {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1.5rem;
+  background: radial-gradient(circle at 50% 15%, rgba(139, 92, 246, 0.08) 0%, transparent 60%);
+}
+
+.onboarding-container {
+  width: 100%;
+  max-width: 480px;
+  background: var(--bg-card);
+  backdrop-filter: blur(12px);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-subtle);
+  padding: 2.5rem;
+  color: var(--text-main);
+  animation: fadeIn var(--transition-normal);
+}
+
+.onboarding-container h1,
+.onboarding-container h2,
+.onboarding-container h3 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  background: linear-gradient(135deg, #ffffff, #a1a1aa);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.onboarding-container label {
+  display: block;
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--text-muted);
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.onboarding-container input,
+.onboarding-container select,
+.onboarding-container textarea {
+  width: 100%;
+  background: rgba(0, 0, 0, 0.2);
+  border: 1px solid var(--border-light);
+  color: var(--text-main);
+  padding: 0.875rem 1rem;
+  border-radius: var(--radius-sm);
+  font-family: 'Inter', sans-serif;
+  font-size: 1rem;
+  transition: all var(--transition-fast);
+  box-sizing: border-box;
+}
+
+.onboarding-container input:focus,
+.onboarding-container select:focus,
+.onboarding-container textarea:focus {
+  outline: none;
+  border-color: var(--accent-primary);
+  box-shadow: 0 0 0 2px rgba(16, 185, 129, 0.2);
+}
+
+.onboarding-container button {
+  width: 100%;
+  margin-top: 2rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--accent-primary);
+  color: #ffffff;
+  font-family: 'Outfit', sans-serif;
+  font-weight: 600;
+  font-size: 1.1rem;
+  padding: 1rem;
+  border-radius: var(--radius-pill);
+  border: none;
+  cursor: pointer;
+  transition: all var(--transition-normal);
+  box-shadow: var(--shadow-glow);
+}
+
+.onboarding-container button:hover {
+  background: var(--accent-primary-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 0 20px rgba(16, 185, 129, 0.4);
+}
+
+.welcome-step {
+  text-align: center;
+  padding: 1rem 0;
+}
+
+.welcome-step h1 {
+  font-size: 2rem;
+}
+
+.welcome-step p {
+  color: var(--text-muted);
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+/* Make select dropdowns look a bit better in dark mode */
+.onboarding-container select option {
+  background: var(--bg-dark);
+  color: var(--text-main);
+}
+
+.food-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+  gap: 1rem;
+}
+
+.food-chip {
+  padding: 0.8rem 1rem;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  text-align: center;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  color: var(--text-muted);
+}
+
+.food-chip:hover {
+  background: rgba(255, 255, 255, 0.08);
+  transform: translateY(-2px);
+}
+
+.food-chip.active {
+  background: rgba(16, 185, 129, 0.1);
+  border-color: var(--accent-primary);
+  color: #fff;
+  box-shadow: 0 0 15px rgba(16, 185, 129, 0.1);
+}
+
+.onboarding-step h2 {
+  font-size: 2rem;
+  font-family: 'Outfit', sans-serif;
+  margin-bottom: 0.5rem;
+}
+
+.onboarding-step p {
+  color: var(--text-muted);
+  font-size: 1rem;
+}
