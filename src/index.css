@@ -158,13 +158,37 @@ code {
 }
 
 /* Layout Utilities */
-.page-container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 2rem 1rem;
+.main-layout {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+}
+
+.content-area {
+  flex: 1;
+  padding-top: 7rem; /* Space for desktop navbar */
+  padding-bottom: 2rem;
+}
+
+@media (max-width: 768px) {
+  .content-area {
+    padding-top: 1rem;
+    padding-bottom: 7rem; /* Space for mobile bottom bar */
+  }
+}
+
+.page-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Standardized responsive card container */
+.premium-center-layout {
+  max-width: 550px;
+  margin: 0 auto;
 }
 
 /* Animations */
