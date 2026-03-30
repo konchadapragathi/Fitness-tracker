@@ -12,6 +12,7 @@
   justify-content: space-between;
   z-index: 1000;
   border-radius: var(--radius-pill);
+  will-change: transform;
 }
 
 .nav-logo {
@@ -47,7 +48,11 @@
   font-size: 0.95rem;
   padding: 0.5rem 1rem;
   border-radius: var(--radius-pill);
-  transition: all var(--transition-fast);
+  transition: color var(--transition-fast), background var(--transition-fast);
+  white-space: nowrap;
+  display: inline-block;
+  transform: translateZ(0);
+  backface-visibility: hidden;
 }
 
 .nav-item:hover {
