@@ -7,13 +7,11 @@
   max-width: 1100px;
   height: 4.5rem;
   padding: 0 2rem;
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
   align-items: center;
-  justify-content: space-between;
   z-index: 1000;
   border-radius: var(--radius-pill);
-  /* needed so nav-links can be absolutely centered */
-  overflow: visible;
 }
 
 .nav-logo {
@@ -21,14 +19,13 @@
   align-items: center;
   gap: 0.75rem;
   cursor: pointer;
+  justify-self: start;
 }
 
-.logo-spark {
-  font-size: 1.5rem;
-  background: var(--accent-primary);
-  -webkit-background-clip: text;
-  background-clip: text;
+.nav-actions {
+  justify-self: end;
 }
+
 
 .logo-text {
   font-family: 'Outfit', sans-serif;
@@ -38,12 +35,10 @@
 }
 
 .nav-links {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
   display: flex;
   gap: 0.25rem;
   align-items: center;
+  justify-self: center;
 }
 
 .nav-item {
