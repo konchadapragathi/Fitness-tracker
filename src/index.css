@@ -91,6 +91,12 @@ code {
   transform: translateY(-2px);
 }
 
+/* Navbar must NOT lift on hover — it uses translateX(-50%) for centering
+   and adding translateY would override it and break the position */
+.navbar-desktop.glass-panel:hover {
+  transform: translateX(-50%);
+}
+
 /* Universal Button Styles */
 .btn-primary-premium {
   display: inline-flex;
